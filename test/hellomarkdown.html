@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>hellomarkdown.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h1 id="hello-markdown">hello markdown</h1>
+<h2 id="what-can-i-do-for-you">what can i do for you</h2>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>name should be long</th>
+<th>np</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tom</td>
+<td>bob</td>
+<td>alice</td>
+</tr>
+</tbody>
+</table>
+<p><em>andwhatis</em>`</p>
+<p><s>right</s></p>
+<p><s>maybe</s>
+<em>so maybe more</em>`</p>
+<blockquote>
+<p>howt to do this</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>instead of being accused
+who knows</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<hr>
+<p><img src="/p2.jpg" alt="awful picturep1">
+<img src="/pictures/p4.jpg" alt="image relate"></p>
+<ul>
+<li>
+<p>what</p>
+<p><strong>mak</strong>
+nop</p>
+</li>
+<li>
+<p>nop</p>
+<ul>
+<li>maybe</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>nop
+1.2 nop</li>
+<li>nop</li>
+</ol>
+<p><code>import x from things can be pretty tough if</code></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> numpy <span class="hljs-keyword">import</span> randrom <span class="hljs-keyword">as</span> rand
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bbb</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">pass</span>
+
+<span class="hljs-keyword">if</span>
+<span class="hljs-keyword">else</span>
+
+</div></code></pre>
+<pre class="hljs"><code><div>
+st=&gt;start: 开始
+op=&gt;operation: My Operation
+cond=&gt;condition: Yes or No?
+e=&gt;end
+st-&gt;op-&gt;cond
+cond(yes)-&gt;e
+cond(no)-&gt;op
+&amp;
+</div></code></pre>
+<p><img src="data:image/png;base64,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" alt="image"></p>
+<pre class="hljs"><code><div>graph LR
+    start[开始] --&gt; input[输入A,B,C]
+    input --&gt; conditionA{A是否大于B}
+    conditionA -- YES --&gt; conditionC{A是否大于C}
+    conditionA -- NO --&gt; conditionB{B是否大于C}
+    conditionC -- YES --&gt; printA[输出A]
+    conditionC -- NO --&gt; printC[输出C]
+    conditionB -- YES --&gt; printB[输出B]
+    conditionB -- NO --&gt; printC[输出C]
+    printA --&gt; stop[结束]
+    printC --&gt; stop
+    printB --&gt; stop
+
+</div></code></pre>
+<pre class="hljs"><code><div>graph LR
+    id1(Start)--&gt;id2(Stop)
+    style id1 fill:#f9f,stroke:#333,stroke-width:4px,fill-opacity:0.5
+    style id2 fill:#ccf,stroke:#f36,stroke-width:3px,stroke-dasharray: 10,5
+</div></code></pre>
+<pre class="hljs"><code><div>graph TB
+A[Apple]--&gt;B{Boy}
+A---C(Cat)
+B.-&gt;D((Dog))
+C==喵==&gt;D
+style A fill:#2ff,fill-opacity:0.1,stroke:#faa,stroke-width:4px
+style D stroke:#000,stroke-width:8px;
+</div></code></pre>
+<pre class="hljs"><code><div>gantt
+    $$title A Gantt Diagram
+    dateFormat  YYYY-MM-DD
+    section Section
+    A task           :a1, 2014-01-01, 30d
+    Another task     :after a1  , 20d
+    section Another
+    Task in sec      :2014-01-12  , 12d
+    another task      : 24d
+
+
+
+
+
+
+</div></code></pre>
+<h1 id=""></h1>
+
+</body>
+</html>

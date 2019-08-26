@@ -1,0 +1,10 @@
+winapi|描述
+-|-
+loadLibrary|
+GetProcAddress||
+LdrGetProcAddress|
+Ldr|
+|
+|
+|
+|
